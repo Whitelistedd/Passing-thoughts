@@ -6,6 +6,9 @@ body {
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: url("./giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
   
   input,
@@ -39,6 +42,7 @@ body {
     padding: 1.5rem;
     border: 1px solid #666;
     border-radius: 3px;
+    border-radius: 2%
   }
   
   .AddThoughtForm input[type='text'] {
@@ -55,9 +59,10 @@ body {
     padding: 1rem;
     margin-bottom: 1rem;
     border-radius: 3px;
-    background-color: #eee;
+    color: white;
+    background-color: cadetblue;
   }
-  
+
   .Thought .remove-button {
     font-size: 80%;
     float: right;

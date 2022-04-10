@@ -13,12 +13,8 @@ function AddThoughtForm({ addThought }) {
       text: text,
       expiresAt: getNewExpirationTime()
     }
-    if (!text) {
-      alert("type something")
-    } else {
-      addThought(thought)
-      setText("")
-    }
+    addThought(thought)
+    setText("")
   }
 
   return (
@@ -29,6 +25,7 @@ function AddThoughtForm({ addThought }) {
         placeholder="What's on your mind?"
         value={text}
         onChange={handleTextChange}
+        required
       />
       <input type="submit" value="Add" />
     </form>
