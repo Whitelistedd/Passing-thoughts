@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import { generateId, getNewExpirationTime } from './utilities';
+import { generateId, getNewExpirationTime } from '../utilities/utilities';
 
-export function AddThoughtForm(props) {
+function AddThoughtForm({ addThought }) {
   const [text,setText] = useState("");
 
-  const handleTextChange = (event) => {
-    setText(event.target.value);
-  }
+  const handleTextChange = event => setText(event.target.value)
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -15,10 +13,11 @@ export function AddThoughtForm(props) {
       text: text,
       expiresAt: getNewExpirationTime()
     }
-    if (text != "") {
-    props.addThought(thought)
-    } else {
+    if (!text) {
       alert("type something")
+    } else {
+      addThought(thought)
+      setText("")
     }
   }
 
@@ -35,3 +34,5 @@ export function AddThoughtForm(props) {
     </form>
   );
 }
+
+export default AddThoughtForm
